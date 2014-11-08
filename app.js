@@ -1,10 +1,12 @@
-var mongodb = require('./lib/mongodb');
+'use strict';
+
+var Client = require('./lib/client');
 
 
-mongodb.init('mongodb://localhost:10020');
+var client = new Client('mongodb://localhost:5000');
 
-setTimeout(function(){
-  mongodb.getStatus(function(){
-
+setInterval(function(){
+  client.getStatus(function(err, info){
+  	console.dir(info);
   });
-}, 1000);
+}, 10000);
