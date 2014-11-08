@@ -1,0 +1,14 @@
+{
+  "name": "jtstats_mongodb",
+  "description": "stats mongodb",
+  "version": "0.0.1",
+  "main": "app",
+  "dependencies": {
+    "mongodb": "^1.4.19",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0"
+  }
+}
