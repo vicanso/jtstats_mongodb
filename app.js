@@ -1,12 +1,16 @@
 'use strict';
-
+var config = require('./config');
 var Client = require('./lib/client');
+var _ = require('underscore');
 
+var JTStatsClient = require('jtstats_client');
+var jtStatsClient = new JTStatsClient({
+  uri : config.statsUri,
+  category : 'mongodb'
+});
 
-var client = new Client('mongodb://localhost:5000');
+var client = new Client(config.mongodbUri, jtStatsClient);
 
 setInterval(function(){
-  client.getStatus(function(err, info){
-  	console.dir(info);
-  });
-}, 10000);
+  client.doStats();
+}, 3000);

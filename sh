@@ -1,0 +1,1 @@
+node-dev app --stats stats://localhost:6000 --mongodb mongodb://localhost:5000
