@@ -13,4 +13,4 @@ var client = new Client(config.mongodbUri, jtStatsClient);
 
 setInterval(function(){
   client.doStats();
-}, 3000);
+}, 10 * 1000);
