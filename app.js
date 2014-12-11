@@ -11,6 +11,11 @@ var jtStatsClient = new JTStatsClient({
 
 var client = new Client(config.mongodbUri, jtStatsClient);
 
-setInterval(function(){
-  client.doStats();
-}, 10 * 1000);
+var interval = 10 * 1000;
+var doStats = function(){
+  client.doStats(function(){
+    _.delay(doStats, interval);
+  });
+};
+
+doStats();
