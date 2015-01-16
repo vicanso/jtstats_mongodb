@@ -4,7 +4,6 @@
   "version": "0.0.2",
   "main": "app",
   "dependencies": {
-    "commander": "^2.5.0",
     "jtlogger": "0.0.6",
     "jtstats_client": "^0.1.3",
     "lodash": "^2.4.1",
