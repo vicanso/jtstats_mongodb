@@ -1,7 +1,9 @@
 'use strict';
+var jtLogger = require('jtlogger');
+jtLogger.appPath = __dirname + '/';
 var config = require('./config');
 var Client = require('./lib/client');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var JTStatsClient = require('jtstats_client');
 var jtStatsClient = new JTStatsClient({

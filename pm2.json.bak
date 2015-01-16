@@ -1,0 +1,15 @@
+{
+  "name" : "jtstats-mongodb",
+  "instances" : 1,
+  "merge_logs" : true,
+  "max-memory-restart" : "100M",
+  "script" : "app.js",
+  "log_file" : "/vicanso/log/jtstats-mongodb.log",
+  "error_file" : "/vicanso/log/jtstats-mongodb-error.log",
+  "out_file" : "/vicanso/log/jtstats-mongodb-out.log",
+  "env" : {
+    "NODE_ENV" : "production",
+    "STATS_URI" : "stats://localhost:6000",
+    "MONGODB_URI" : "mongodb://vicanso:MY_MONGODB_PWD@localhost:5000"
+  }
+}

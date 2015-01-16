@@ -1,11 +1,4 @@
 'use strict';
-var program = require('commander');
+exports.statsUri = process.env.STATS_URI || 'stats://localhost:6000';
 
-program.version('0.0.1')
-  .option('--stats <n>', 'stats uri')
-  .option('--mongodb <n>', 'mongodb uri')
-  .parse(process.argv);
-
-exports.statsUri = program.stats;
-
-exports.mongodbUri = program.mongodb;
+exports.mongodbUri = process.env.MONGODB_URI || 'mongodb://localhost:10020';
