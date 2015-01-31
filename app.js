@@ -8,7 +8,7 @@ var _ = require('lodash');
 var JTStatsClient = require('jtstats_client');
 var jtStatsClient = new JTStatsClient({
   uri : config.statsUri,
-  category : 'mongodb'
+  category : config.category
 });
 
 var client = new Client(config.mongodbUri, jtStatsClient);
