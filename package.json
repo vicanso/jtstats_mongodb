@@ -1,9 +1,10 @@
 {
   "name": "jtstats_mongodb",
   "description": "stats mongodb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "app",
   "dependencies": {
+    "bytes": "^1.0.0",
     "jtlogger": "0.0.7",
     "jtstats_client": "^0.1.3",
     "lodash": "^2.4.1",
