@@ -1,6 +1,5 @@
 'use strict';
-var jtLogger = require('jtlogger');
-jtLogger.appPath = __dirname + '/';
+initLog();
 var config = require('./config');
 var Client = require('./lib/client');
 var _ = require('lodash');
@@ -36,3 +35,22 @@ var doStats = function(){
 };
 
 doStats();
+
+
+function initLog(){
+  var os = require('os');
+  var jtLogger = require('jtlogger');
+  jtLogger.appPath = __dirname + '/';
+
+  if(process.env.LOG_SERVER){
+    var logServerInfo = process.env.LOG_SERVER.split(':');
+
+    jtLogger.add(jtLogger.transports.UDP, {
+      host : logServerInfo[0],
+      port : logServerInfo[1]
+    });
+  }
+
+  jtLogger.add(jtLogger.transports.Console);
+  jtLogger.logPrefix = '[jtstats-mongodb][rebot]';
+}

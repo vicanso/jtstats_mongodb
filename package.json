@@ -5,7 +5,7 @@
   "main": "app",
   "dependencies": {
     "bytes": "^1.0.0",
-    "jtlogger": "0.0.7",
+    "jtlogger": "0.1.4",
     "jtstats_client": "^0.1.3",
     "lodash": "^2.4.1",
     "mongodb": "^1.4.19"

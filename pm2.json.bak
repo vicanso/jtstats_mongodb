@@ -2,7 +2,7 @@
   "name" : "jtstats-mongodb",
   "instances" : 1,
   "merge_logs" : true,
-  "max-memory-restart" : "100M",
+  "max_memory_restart" : "200M",
   "script" : "app.js",
   "log_file" : "/vicanso/pm2/log/jtstats-mongodb.log",
   "error_file" : "/vicanso/pm2/log/jtstats-mongodb-error.log",
@@ -10,7 +10,8 @@
   "env" : {
     "NODE_ENV" : "production",
     "CATEGORY" : "robot",
-    "STATS_URI" : "stats://localhost:6000",
-    "MONGODB_URI" : "mongodb://vicanso:MY_MONGODB_PWD@localhost:5000"
+    "STATS_URI" : "stats://stats:6000",
+    "LOG_SERVER" : "log:2900",
+    "MONGODB_URI" : "mongodb://vicanso:MY_MONGODB_PWD@mongodb:5000"
   }
 }
