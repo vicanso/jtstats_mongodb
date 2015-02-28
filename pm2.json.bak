@@ -9,9 +9,6 @@
   "out_file" : "/vicanso/pm2/log/jtstats-mongodb-out.log",
   "env" : {
     "NODE_ENV" : "production",
-    "CATEGORY" : "robot",
-    "STATS_URI" : "stats://stats:6000",
-    "LOG_SERVER" : "log:2900",
     "MONGODB_URI" : "mongodb://vicanso:MY_MONGODB_PWD@mongodb:5000"
   }
 }

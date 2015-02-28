@@ -1,6 +1,7 @@
 'use strict';
 var os = require('os');
-exports.statsUri = process.env.STATS_URI || 'stats://localhost:6000';
+
+exports.env = process.env.NODE_ENV || 'development';
 
 exports.mongodbUri = process.env.MONGODB_URI || 'mongodb://localhost:10020';
 
