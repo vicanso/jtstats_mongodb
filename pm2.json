@@ -2,6 +2,7 @@
   "name" : "jtstats-mongodb",
   "instances" : 1,
   "merge_logs" : true,
+  "exec_mode" : "fork",
   "max_memory_restart" : "200M",
   "script" : "app.js",
   "log_file" : "/vicanso/pm2/log/jtstats-mongodb.log",
