@@ -41,7 +41,7 @@ function doStats(client){
     }, interval);
   });
   memoryLog();
-};
+}
 
 /**
  * [memoryLog 内存监控]
@@ -99,13 +99,13 @@ function getServers(cbf){
       });
     });
   }else{
-    request.get('http://jt-service.oss-cn-shenzhen.aliyuncs.com/server.json', function(err, res, body){
+    request.get('http://jt-service.oss-cn-shenzhen.aliyuncs.com/server.json', function(err, res, data){
       if(err){
         cbf(err);
         return;
       }
       try{
-        var data = JSON.parse(body);
+        data = JSON.parse(data);
       }catch(err){
         cbf(err);
         return;

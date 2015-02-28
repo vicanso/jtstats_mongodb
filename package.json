@@ -1,7 +1,7 @@
 {
   "name": "jtstats_mongodb",
   "description": "stats mongodb",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "main": "app",
   "dependencies": {
     "bytes": "^1.0.0",
@@ -13,7 +13,7 @@
     "request": "^2.53.0"
   },
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-jshint": "^1.9.0"
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2"
   }
 }
