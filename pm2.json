@@ -8,7 +8,6 @@
   "error_file" : "/vicanso/pm2/log/jtstats-mongodb-error.log",
   "out_file" : "/vicanso/pm2/log/jtstats-mongodb-out.log",
   "env" : {
-    "NODE_ENV" : "production",
-    "MONGODB_URI" : "mongodb://vicanso:MY_MONGODB_PWD@mongodb:5000"
+    "NODE_ENV" : "production"
   }
 }

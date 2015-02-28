@@ -17,7 +17,14 @@ getServers(function(err, serverList){
     var options = serverList.stats;
     options.category = config.category;
     var jtStatsClient = new JTStatsClient(options);
-    var client = new Client(config.mongodbUri, jtStatsClient);
+    var mongodbAuth = process.env.MONGODB_AUTH;
+    var mongodbServer = serverList.mongodb;
+    var mongodbUri = mongodbServer.host + ':' + mongodbServer.port;
+    if(mongodbAuth){
+      mongodbUri = mongodbAuth + '@' + mongodbUri;
+    }
+    mongodbUri = 'mongodb://' + mongodbUri
+    var client = new Client('mongodb://' + mongodbUri, jtStatsClient);
     doStats(client);
   }
 });
@@ -85,6 +92,10 @@ function getServers(cbf){
         stats : {
           host : 'localhost',
           port : 6000
+        },
+        mongodb : {
+          host : 'localhost',
+          port : 5000
         }
       });
     });
