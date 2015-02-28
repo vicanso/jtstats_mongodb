@@ -23,7 +23,6 @@ getServers(function(err, serverList){
     if(mongodbAuth){
       mongodbUri = mongodbAuth + '@' + mongodbUri;
     }
-    mongodbUri = 'mongodb://' + mongodbUri
     var client = new Client('mongodb://' + mongodbUri, jtStatsClient);
     doStats(client);
   }
