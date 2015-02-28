@@ -6,14 +6,14 @@ var Client = require('./lib/client');
 var _ = require('lodash');
 var bytes = require('bytes');
 var JTStatsClient = require('jtstats_client');
+var debug = require('debug')('jt.stats_mongodb');
 
 getServers(function(err, serverList){
   if(err){
     console.error(err);
   }else{
     initLog(serverList.log);
-
-    console.info('servers:%j', serverList);
+    debug('servers:%j', serverList);
     var options = serverList.stats;
     options.category = config.category;
     var jtStatsClient = new JTStatsClient(options);
