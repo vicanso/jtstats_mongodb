@@ -20,6 +20,7 @@ getServers(function(err, serverList){
     var mongodbAuth = process.env.MONGODB_AUTH;
     var mongodbServer = serverList.mongodb;
     var mongodbUri = mongodbServer.host + ':' + mongodbServer.port;
+    console.info('connect to mongodb:%s', mongodbUri);
     if(mongodbAuth){
       mongodbUri = mongodbAuth + '@' + mongodbUri;
     }
@@ -81,36 +82,19 @@ function initLog(server){
  * @return {[type]}     [description]
  */
 function getServers(cbf){
-  if(config.env === 'development'){
-    setImmediate(function(){
-      cbf(null, {
-        log : {
-          host : 'localhost',
-          port : 2900
-        },
-        stats : {
-          host : 'localhost',
-          port : 6000
-        },
-        mongodb : {
-          host : 'localhost',
-          port : 5000
-        }
-      });
-    });
-  }else{
-    request.get('http://jt-service.oss-cn-shenzhen.aliyuncs.com/server.json', function(err, res, data){
-      if(err){
-        cbf(err);
-        return;
-      }
-      try{
-        data = JSON.parse(data);
-      }catch(err){
-        cbf(err);
-        return;
-      }
-      cbf(null, data);
-    });
-  }
+  var serverUrl = 'http://jt-service.oss-cn-shenzhen.aliyuncs.com/server.json';
+  request.get(serverUrl, function(err, res, data){
+    if(err){
+      cbf(err);
+      return;
+    }
+    try{
+      data = JSON.parse(data);
+    }catch(err){
+      cbf(err);
+      return;
+    }
+    var serverList = data[config.env] || data.development;
+    cbf(null, serverList);
+  });
 }
