@@ -54,9 +54,7 @@ function memoryLog(){
   var heapTotal = bytes(memoryUsage.heapTotal);
   var heapUsed = bytes(memoryUsage.heapUsed);
   
-  console.info('memory rss:%s', rss);
-  console.info('memory heapTotal:%s', heapTotal);
-  console.info('memory heapUsed:%s', heapUsed);
+  console.info('memory rss:%s, heapTotal:%s, heapUsed:%s', rss, heapTotal, heapUsed);
 }
 
 
